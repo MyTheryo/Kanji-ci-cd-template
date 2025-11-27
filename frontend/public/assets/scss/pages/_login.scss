@@ -1,0 +1,357 @@
+/**=====================
+    25. Authentication CSS Start
+==========================**/
+.login_one_image {
+  background-color: white;
+  background-size: cover;
+  background-position: center center;
+}
+.login_two_image {
+  background-color: white;
+  background-size: cover;
+  background-position: center center;
+}
+.login_bs_validation {
+  background-color: white;
+  background-size: cover;
+  background-position: center center;
+}
+.login-card {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  //background: url("../../images/login/login_bg.jpg");
+  background-position: center;
+  padding: 30px 12px;
+  input[type="password"] {
+    padding: 12px 60px 12px 12px !important;
+    [dir="rtl"] & {
+      padding: 12px 12px 12px 60px !important;
+    }
+  }
+  input[type="text"] {
+    padding: 12px 60px 12px 12px;
+    [dir="rtl"] & {
+      padding: 12px 12px 12px 60px !important;
+    }
+  }
+  .opt-text {
+    padding: 0 !important;
+  }
+  .logo {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    img {
+      margin: 0 auto;
+    }
+  }
+  .btn-showcase {
+    .btn {
+      line-height: 1;
+      padding: 10px 15px;
+      margin: 0;
+      & + .btn {
+        margin-left: 5px;
+      }
+      i {
+        height: 16px;
+        vertical-align: bottom;
+      }
+    }
+  }
+  .login-main {
+    width: 450px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--login-box-shadow);
+    margin: 0 auto;
+    background-color: $white;
+    [data-theme="dark"] & {
+      background-color: var(--card-color);
+    }
+    .theme-form {
+      h4 {
+        margin-bottom: 5px;
+      }
+      .link-two {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @media only screen and (max-width: 575px) {
+          position: unset;
+          float: left !important;
+        }
+      }
+      .unlock-1 {
+        width: 75%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      label {
+        font-size: 15px;
+        letter-spacing: 0.4px;
+      }
+      .checkbox {
+        label {
+          &::before {
+            background-color: var(--body-color);
+            border: 1px solid var(--light-gray);
+          }
+        }
+      }
+      .login-social-title {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin-top: 75px;
+        margin-bottom: 30px;
+        h6 {
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+          color: var(--light-text);
+          background-color: var(--card-color);
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: var(--solid-border);
+          top: 10px;
+          z-index: -1;
+          right: 0;
+        }
+      }
+      input {
+        transition: all 0.3s ease;
+        &::-webkit-input-placeholder {
+          color: var(--light-text);
+        }
+        &:hover,
+        &:focus {
+          box-shadow: none !important;
+          transition: all 0.3s ease;
+        }
+      }
+      p {
+        margin-bottom: 25px;
+        font-size: 14px;
+        color: var(--dark-gray);
+        a {
+          color: var(--theme-default);
+        }
+      }
+      .form-group {
+        margin-bottom: 10px;
+        position: relative;
+        a {
+          color: var(--theme-default);
+          float: right;
+          &.link {
+            float: none;
+          }
+          [dir="rtl"] & {
+            float: left;
+            left: 0;
+            right: unset;
+          }
+        }
+      }
+      ul.login-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid var(--solid-border);
+          background-color: rgba($primary-color, 0.05);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          i {
+            width: auto;
+            height: 16px;
+            color: var(--theme-default);
+            vertical-align: middle;
+          }
+          &:nth-child(n + 2) {
+            margin-left: 15px;
+            [dir="rtl"] & {
+              margin-right: 15px;
+              margin-left: unset;
+            }
+          }
+          &:hover {
+            background-color: var(--theme-default);
+            i {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.login-bg {
+    background: rgba($primary-color, 0.06) !important;
+    [data-theme="dark"] & {
+      background-color: var(--body-color) !important;
+      background-blend-mode: overlay;
+    }
+  }
+}
+.show-hide {
+  position: absolute;
+  top: 52px;
+  right: 30px;
+  transform: translateY(-50%);
+  span {
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--theme-default);
+    &.show {
+      &:before {
+        content: "show";
+      }
+    }
+    &:before {
+      content: "hide";
+    }
+  }
+  [dir="rtl"] & {
+    position: absolute;
+    left: 20px;
+    right: unset;
+  }
+}
+.needs-validation {
+  &.was-validated {
+    .invalid-feedback {
+      color: $danger-color;
+    }
+  }
+  .invalid-feedback {
+    color: var(--dark-gray);
+  }
+  .show-hide {
+    right: 30px;
+  }
+  .invalid-tooltip {
+    right: 10px;
+  }
+}
+.login-card {
+  .login-main {
+    .theme-form {
+      .form-check {
+        a {
+          float: right;
+        }
+      }
+      label {
+        font-size: 14px;
+        a {
+          color: var(--theme-default);
+        }
+      }
+      .show-hide {
+        top: 50%;
+      }
+    }
+  }
+}
+.login-dark {
+  [data-theme="dark"] & {
+    background-color: var(--card-color);
+    background-blend-mode: overlay;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .login-card {
+    background: transparent;
+  }
+  .login_one_image {
+    top: 0;
+    height: 100vh;
+    opacity: 0.5;
+    position: fixed;
+  }
+  .login_bs_validation {
+    top: 0;
+    height: 100vh;
+    opacity: 0.5;
+    position: fixed;
+  }
+  .login-card {
+    .logo {
+      position: relative;
+    }
+    .login-main {
+      position: relative;
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .login-card {
+    .login-main {
+      width: 380px;
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .login-card {
+    .login-main {
+      .theme-form {
+        ul {
+          &.login-social {
+            li {
+              width: 35px;
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 575px) {
+  .login-card {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .logo {
+      margin-bottom: 10px;
+    }
+    .login-main {
+      width: auto;
+      padding: 20px;
+      .theme-form {
+        .form-group {
+          margin-bottom: 5px !important;
+          .form-check-label {
+            margin-bottom: 0 !important;
+          }
+        }
+        p {
+          margin-bottom: 5px;
+        }
+        .or {
+          &:before {
+            width: 55%;
+          }
+        }
+      }
+    }
+  }
+}
+/**=====================
+      25. Authentication CSS Ends
+  ==========================**/

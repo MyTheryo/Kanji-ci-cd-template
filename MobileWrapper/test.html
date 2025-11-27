@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <script>
+      window.onload = function () {
+        async function loadWidget() {
+          try {
+            const res = await fetch(
+              'https://agencyreviews-api-dev.powerhouse.so/agency_widget?agency_id=36289&code=18eab4b090',
+            );
+            if (!res.ok) {
+              throw new Error('Error');
+            }
+            const component = await res.json();
+            let elem = document.createElement('div');
+            elem.innerHTML = component.widget;
+            elem.innerHTML =
+              '<a href=https://agencyreviews-app-dev.powerhouse.so/AgencyDetails/36289/18eab4b090>' +
+              component.widget +
+              '</a>';
+            document.body.insertBefore(elem, document.body.firstChild);
+          } catch (error) {
+            console.error('Failed to load widget:', error);
+          }
+        }
+        loadWidget();
+      };
+    </script>
+  </body>
+</html>

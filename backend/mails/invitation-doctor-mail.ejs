@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Join TheryoAI: Invitation for Healthcare Providers</title>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      /* Base */
+      body {
+        margin: 0;
+        padding: 0;
+        min-width: 100%;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #fafafa;
+        color: #222222;
+      }
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-top: 0;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      p {
+        margin-top: 0;
+        margin-bottom: 24px;
+      }
+      table td {
+        vertical-align: top;
+      }
+
+      /* Layout */
+      .email-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .email-header {
+        background-color: #0070f3;
+        padding: 24px;
+        color: #fff;
+      }
+
+      .email-body {
+        padding: 24px;
+        background-color: #fff;
+      }
+
+      .email-footer {
+        background-color: #f6f6f6;
+        padding: 24px;
+      }
+
+      /* Button */
+      .button {
+        display: inline-block;
+        background-color: #0070f3;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-wrapper">
+      <div class="email-header">
+        <h1>Welcome to TheryoAI</h1>
+      </div>
+      <div class="email-body">
+        <p>Hello <%= user.doctorName %>,</p>
+        <p>
+          You have been invited to join <strong>TheryoAI</strong> as a
+          healthcare provider by your client <%= user.username %>. We are
+          thrilled to welcome you to our platform!
+        </p>
+        <p>
+          Your client has requested to add you to their care team, where you can
+          collaborate and provide personalized care.
+        </p>
+        <% if (user.signupUrl) { %>
+        <p>
+          Please accept this invitation by clicking on the following link:
+          <a href="<%= user.signupUrl %>" target="_blank">Sign Up</a>
+        </p>
+        <p>
+          During the signup process, please ensure you choose
+          <strong>Provider</strong> as your role.
+        </p>
+
+        <% } else { %>
+        <p>
+          If You already have an account. Please
+          <a href="<%= user.loginUrl %>" target="_blank">Sign In</a> to accept
+          the invitation from <%= user.username %>.
+        </p>
+        <% } %>
+
+        <p>
+          If you have any questions or need assistance, feel free to reach out
+          to our support team.
+        </p>
+        <p>
+          Thank you,<br />
+          The TheryoAI Team
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

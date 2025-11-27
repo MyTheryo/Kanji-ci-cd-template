@@ -1,0 +1,63 @@
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.chat-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #082C53; /* Deep blue, as per your color scheme */
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  font-size: 30px;
+  animation: bounce 2s infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.chat-bubble:hover {
+  transform: scale(1.1);
+  background-color: #6AC16B; /* Lighter green for a dynamic hover effect */
+}
+
+.chat-bubble svg {
+  fill: white;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.chat-bubble:hover svg {
+  animation: reassembleSvg 0.8s forwards;
+}
+
+.react-chatbot-kit-chat-input-container {
+  position: static !important;
+}
+@keyframes reassembleSvg {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

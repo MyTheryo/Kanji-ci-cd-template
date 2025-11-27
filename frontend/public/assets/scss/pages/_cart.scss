@@ -1,0 +1,99 @@
+/**=====================
+    79. cart CSS start
+==========================**/
+.cart {
+  .total-amount {
+    text-align: right !important;
+    margin-top: 30px;
+  }
+  .cart-btn-transform {
+    text-transform: capitalize;
+  }
+  .qty-box {
+    width: 25%;
+    margin: 0 auto;
+    .input-group {
+      .btn {
+        background-color: var(--photoswipe-border)!important;
+        border-color: var(--photoswipe-border) !important;
+        padding: 8px 12px;
+      }
+    }
+  }
+}
+.cart-buttons {
+  margin-top: 30px;
+  .cart-btn {
+    float: right;
+    padding-right: 85px;
+  }
+}
+.order-history {
+  &.wishlist {
+    table {
+      thead {
+        tr {
+          border-color: var(--solid-border);
+          th {
+            text-align: center;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            text-align: center;
+            fieldset {
+              border: none;
+              margin: 0 auto;
+              width: 160px;
+              overflow: hidden;
+              .d-flex {
+                max-width: 200px;
+                input {
+                  text-align: center;
+                  border-radius: 5px !important;
+                  margin-inline: 5px !important;
+                  height: 32px;
+                  width: 80px;
+                  max-width: 80px;
+                }
+                button {
+                  border-radius: 5px !important;
+                  width: 32px;
+                  height: 32px;
+                  padding: 0;
+                }
+              }
+            }
+            a {
+              svg {
+                stroke: $danger-color !important;
+              }
+            }
+            .input-group {
+              input {
+                border-radius: 5px 0 0 5px !important;
+                [dir="rtl"] & {
+                  border-radius: 0 5px 5px 0 !important;
+                }
+              }
+              a {
+                &.btn {
+                  border-radius: 0 5px 5px 0 !important;
+                  padding: 9px 15px;
+                  [dir="rtl"] & {
+                    border-radius: 5px 0 0 5px !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/**=====================
+    79. cart CSS Ends
+==========================**/
