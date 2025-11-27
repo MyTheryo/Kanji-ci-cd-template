@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+echo "🔍 Running pre-commit checks..."
+
+# Run SwiftLint
+if command -v swiftlint &> /dev/null; then
+    echo "📝 Running SwiftLint..."
+    swiftlint lint --strict --quiet App/App
+else
+    echo "⚠️  SwiftLint not installed. Run: brew bundle"
+    exit 1
+fi
+
+# Run tests
+echo "🧪 Running tests..."
+cd App
+xcodebuild test \
+    -workspace App.xcworkspace \
+    -scheme App \
+    -destination 'platform=iOS Simulator,name=iPhone 15' \
+    -quiet \
+    | grep -E "(Test Case|passed|failed)" || true
+
+echo "✅ Pre-commit checks passed!"

@@ -1,0 +1,12 @@
+# Match - Code Signing Management
+# Stores certificates in a private Git repo
+
+git_url ENV["MATCH_GIT_URL"]
+storage_mode "git"
+type "appstore"
+
+app_identifier ENV["BUNDLE_ID"] || "com.example.app"
+team_id ENV["TEAM_ID"]
+
+# Read-only in CI to prevent accidental changes
+readonly is_ci
