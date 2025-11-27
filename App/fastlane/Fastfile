@@ -44,7 +44,7 @@ platform :ios do
     run_tests(
       workspace: WORKSPACE,
       scheme: SCHEME,
-      device: "iPhone 15",
+      device: ENV["TEST_DEVICE"] || "iPhone 16",
       clean: true,
       code_coverage: true
     )

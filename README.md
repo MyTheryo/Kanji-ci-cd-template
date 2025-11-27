@@ -116,7 +116,7 @@ open App/App.xcworkspace
 └─────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────┐
-│  Push to develop branch → Build → Upload to TestFlight         │
+│  Push to develop → CI passes → Build → Upload to TestFlight    │
 └─────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────┐
@@ -395,11 +395,11 @@ bundle exec fastlane match appstore --readonly
 base64 -i AuthKey.p8 | tr -d '\n'
 ```
 
-### "xcodebuild: error: Could not find 'iPhone 15' simulator"
+### "xcodebuild: error: Could not find 'iPhone 16' simulator"
 
-**Cause**: CI runner doesn't have the expected simulator.
+**Cause**: CI runner or your local machine doesn't have the expected simulator.
 
-**Fix**: Update the device name in `App/fastlane/Fastfile` to match available simulators.
+**Fix**: Set the `TEST_DEVICE` environment variable or update the device name in `App/fastlane/Fastfile` to match available simulators. You can also update `scripts/pre-commit` for local development.
 
 ### Pre-commit hook is slow
 

@@ -1,8 +1,10 @@
 name: Deploy to TestFlight
 
 on:
-  push:
+  workflow_run:
+    workflows: ["CI"]
     branches: [develop]
+    types: [completed]
   workflow_dispatch:
 
 concurrency:
@@ -14,6 +16,7 @@ jobs:
     name: TestFlight
     runs-on: macos-14
     environment: staging
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - uses: actions/checkout@v4
