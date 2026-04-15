@@ -1,0 +1,13 @@
+{
+  "developer": "Kanji",
+  "branch_prefix": "Kanji",
+  "branch_name": "Kanji_kanji-ci-cd-template",
+  "reviewer": "Kanji",
+  "github_repo": "MyTheryo/Kanji-ci-cd-template",
+  "dasher_project_id": "kanji-ci-cd-template",
+  "worktree_slug": "kanji-ci-cd-template",
+  "lint_cmd": "swiftlint lint --strict",
+  "build_cmd": "",
+  "test_cmd": "",
+  "repo_path": "/Users/kanjikawanabe/LocalProjects/Kanji-ci-cd-template"
+}
