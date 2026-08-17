@@ -13,6 +13,8 @@ jobs:
   deploy:
     name: App Store
     runs-on: macos-14
+    # Bounded 2026-08-17. Worst case 250 billed min at 10x. macOS bills 10x. Raise if a healthy run nears it; do not remove.
+    timeout-minutes: 25
     environment: production
 
     steps:
